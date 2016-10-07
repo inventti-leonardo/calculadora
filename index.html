@@ -1,23 +1,22 @@
 <script>
-calculadora = {
-    formatar: function (expressao) {
-        return expressao.replace(/[^\d\.\,\+\-\*\/\(\)]/g, '').replace(/\,/g, '.').replace(/\.(?=(\d{3}\.))/g, '');
-    },
-
-    calcular: function (expressao) {
-        return eval(this.formatar(expressao));
-    }
+function calcular(expressao) {
+    var expressaoFormatada = expressao.replace(/[^\d\.\,\+\-\*\/\(\)]/g, '').replace(/\,/g, '.').replace(/\.(?=(\d{3}\.))/g, '');
+    return eval(expressaoFormatada).toFixed();
 }
 
-var html = '<p>1 + 1,00 + 1.00 = '+calculadora.calcular('1 + 1,00 + 1.00')+'</p>';
-html += '<p>1000 + 1000,00 + 1000.00 + 1.000,00 + 1.000.00 = '+calculadora.calcular('1000 + 1000,00 + 1000.00 + 1.000,00 + 1.000.00')+'</p>';
-html += '<p>1000000 + 1000000,00 + 1000000.00 + 1.000.000,00 + 1.000.000.00 = '+calculadora.calcular('1000000 + 1000000,00 + 1000000.00 + 1.000.000,00 + 1.000.000.00')+'</p>';
-html += '<p>1aaa + bbb1 + c1c = '+calculadora.calcular('1aaa + bbb1 + c1c')+'</p>';
-html += '<p>R$1,00 + 1 = '+calculadora.calcular('R$1,00 + 1')+'</p>';
-html += '<p>2pc * R$3,00 = '+calculadora.calcular('2pc * R$3,00')+'</p>';
-html += '<p>(2pc * R$3,00) / 2 = '+calculadora.calcular('(2pc * R$3,00) / 2')+'</p>';
-html += '<p>1,123456789 / 1.123456789 = '+calculadora.calcular('1,123456789 / 1.123456789')+'</p>';
-html += '<p>10.1 + 10.2 = '+calculadora.calcular('10.1 + 10.2')+' <span style="color: red">problemas com pontos flutuantes do js</span></p>';
-html += '<p>1.000 + 1 = '+calculadora.calcular('1.000 + 1')+' <span style="color: red">1.000 deveria entender como 1 ou 1000?</span></p>';
+
+var html = '<h1>Calculadora</h1>';
+html += '<h1>Exemplos</h1>';
+html += '<p>1 + 1,00 + 1.00 = '+calcular('1 + 1,00 + 1.00')+'</p>';
+html += '<p>1000 + 1000,00 + 1000.00 + 1.000,00 + 1.000.00 = '+calcular('1000 + 1000,00 + 1000.00 + 1.000,00 + 1.000.00')+'</p>';
+html += '<p>1000000 + 1000000,00 + 1000000.00 + 1.000.000,00 + 1.000.000.00 = '+calcular('1000000 + 1000000,00 + 1000000.00 + 1.000.000,00 + 1.000.000.00')+'</p>';
+html += '<p>1aaa + bbb1 + c1c = '+calcular('1aaa + bbb1 + c1c')+'</p>';
+html += '<p>R$1,00 + 1 = '+calcular('R$1,00 + 1')+'</p>';
+html += '<p>2pc * R$3,00 = '+calcular('2pc * R$3,00')+'</p>';
+html += '<p>(2pc * R$3,00) / 2 = '+calcular('(2pc * R$3,00) / 2')+'</p>';
+html += '<p>1,123456789 / 1.123456789 = '+calcular('1,123456789 / 1.123456789')+'</p>';
+html += '<p>10.1 + 10.2 = '+calcular('10.1 + 10.2')+', corrigindo problema de ponto flutuante do js?</p>';
+html += '<h1>Problemas</b></h1>';
+html += '<p>1.000 + 1 = '+calcular('1.000 + 1')+', o n&uacute;mero "1.000" deveria ser mil ou um?</p>';
 document.write(html);
 </script>
