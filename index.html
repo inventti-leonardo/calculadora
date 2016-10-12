@@ -5,7 +5,7 @@ function calcular() {
         expressao = expressao.replace('{'+(i-1)+'}', arguments[i]);
     
     var expressaoFormatada = expressao.replace(/[^\d\.\,\+\-\*\/\(\)]/g, '').replace(/\,/g, '.').replace(/\.(?=(\d{3}\.))/g, '');
-    return eval(expressaoFormatada).toFixed();
+    return eval(expressaoFormatada).toFixed(2);
 }
 
 
