@@ -12,15 +12,21 @@ function calcular() {
 var html = '<h1>Calculadora</h1>';
 html += '<h1>Com formata&ccedil;&atilde;o</h1>';
 html += '<code>';
-html += '<p>calcular(\'1 + 1,00 + 1.00\') // '+calcular('1 + 1,00 + 1.00')+'</p>';
-html += '<p>calcular(\'1000 + 1000,00 + 1000.00 + 1.000,00 + 1.000.00\') // '+calcular('1000 + 1000,00 + 1000.00 + 1.000,00 + 1.000.00')+'</p>';
-html += '<p>calcular(\'1000000 + 1000000,00 + 1000000.00 + 1.000.000,00 + 1.000.000.00\') // '+calcular('1000000 + 1000000,00 + 1000000.00 + 1.000.000,00 + 1.000.000.00')+'</p>';
+html += '<p>calcular(\'1000\') // '+calcular('1000')+'</p>';
+html += '<p>calcular(\'1000.00\') // '+calcular('1000.00')+'</p>';
+html += '<p>calcular(\'1000,00\') // '+calcular('1000,00')+'</p>';
+html += '<p>calcular(\'1.000.00\') // '+calcular('1.000.00')+'</p>';
+html += '<p>calcular(\'1.000,00\') // '+calcular('1.000,00')+'</p>';
+html += '<p>calcular(\'1,000.00\') // '+calcular('1,000.00')+'</p>';
+html += '<p>calcular(\'1,000,00\') // '+calcular('1,000,00')+'</p>';
+html += '<p>calcular(\'1 000.00\') // '+calcular('1 000.00')+'</p>';
+html += '<p>calcular(\'1 000,00\') // '+calcular('1 000,00')+'</p>';
 html += '</code>';
 html += '<h1>Com sem&acirc;ntica</h1>';
 html += '<code>';
-html += '<p>calcular(\'R$1,00 + 1\') // '+calcular('R$1,00 + 1')+'</p>';
-html += '<p>calcular(\'2pc * R$3,00\') // '+calcular('2pc * R$3,00')+'</p>';
-html += '<p>calcular(\'(2pc * R$3,00) / 2\') // '+calcular('(2pc * R$3,00) / 2')+'</p>';
+html += '<p>calcular(\'R$1,00 + R$2,00\') // '+calcular('R$1,00 + R$2,00')+'</p>';
+html += '<p>calcular(\'2UN * R$3,00\') // '+calcular('2UN * R$3,00')+'</p>';
+html += '<p>calcular(\'(2PC * R$3,00) / 2\') // '+calcular('(2PC * R$3,00) / 2')+'</p>';
 html += '</code>';
 html += '<h1>Com ponto flutuante</h1>';
 html += '<code>';
@@ -32,7 +38,7 @@ html += '<p>calcular(\'{0}+({1}*{2})\', \'10,1\', 10.2, 2) // '+calcular('{0}+({
 html += '</code>';
 html += '<h1>Problemas</b></h1>';
 html += '<code>';
-html += '<p>calcular(\'1.000 + 1\') // '+calcular('1.000 + 1')+', o n&uacute;mero "1.000" deveria ser mil ou um?</p>';
+html += '<p>calcular(\'1.000\') // '+calcular('1.000')+', o n&uacute;mero "1.000" deveria ser mil ou um?</p>';
 html += '</code>';
 document.write(html);
 </script>
